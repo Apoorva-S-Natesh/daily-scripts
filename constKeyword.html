@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>const Keyword</title>
+</head>
+<body>
+    <h1>const declared variables are block scoped and constant in value: cannot be 
+        reassigned.
+    </h1>
+
+    <script>
+        {
+            const y = 500;
+            console.log('Accessing inside same scope',y);//allowed
+            y = 600; //Reassignment to const variables is not allowed
+            console.log('Value of y after reassignment: ',y);// Not Allowed
+        }
+        console.log('Accessing Outside the block',y);//Not Allowed: Error
+    </script>
+</body>
+</html>

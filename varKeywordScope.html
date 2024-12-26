@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variables Declaration in JavaScript</title>
+</head>
+<body>
+    <h1>Variable Declaration</h1>
+
+    <p>While declaring Variables in javascript we have to use 
+        either of the keyword: var, let, const.
+    </p>
+
+    <ul>
+        <li>The variables which are declared using var can be accessed Inside the same
+            block (scope) in which it is Declared as well as Outside the block as well.
+        </li>
+
+        <li>In short var declared variables does not have any block scope</li>
+    </ul>
+
+    <script> 
+        var a = 10; //declaration and initialization of a
+        console.log(a); // allowed
+        {
+            console.log('Accessing a inside block',a); //allowed
+            var b = 300;
+            console.log(b);
+        }
+        console.log('Accessing b Outside the block: ',b)//allowed
+    </script>
+</body>
+</html>

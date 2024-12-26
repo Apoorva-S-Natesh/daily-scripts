@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>let Keyword</title>
+</head>
+<body>
+    <h1>let keywords are block scoped</h1>
+
+    <script>
+        {
+            let x = 200;
+            console.log('Accessing x in the same scope',x);//Allowed
+            x = 400; 
+            console.log('Value of x after Reassignment: ',x);//400
+        }
+        console.log('Accessing x outside the scope',x); //Not Allowed
+    </script>
+</body>
+</html>
