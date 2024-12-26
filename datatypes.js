@@ -26,12 +26,12 @@ const s1 = {
 	Age : 28,
 }
 const s2 = {
-	Name : "Jay",
+	Name : "Jill",
 	Occupation : "SCientist",
 }
 
 const s3 = {
-	Name : "gubbi mari",
+	Name : "jiji",
 	Work_Experience : {
 		XYZ : '3 months',
 		ABC : '1 year',
@@ -49,7 +49,7 @@ const s3 = {
 //Example
 
 const s4 = {
-	Name : 'Gubbi mari',
+	Name : 'jojo',
 	Age : 21,
 	Fees_Paid : 2001.095,
 	Work_Experience : {
