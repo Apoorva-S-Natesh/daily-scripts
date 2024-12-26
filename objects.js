@@ -2,7 +2,7 @@
 /* The Array object, enables storing a collection of multiple items under a single 
 variable name,(not continuous memory location on heap) and has members for performing common array operations. */
 
-var arr1 = [10, 20, 30, 40];
+var arr1 = [10, 21, 30, 43, 50];
 
 // console.log("Element at 0th Index: ", arr1[0]);
 // console.log("Element at 2nd Index: ", arr1[2]);
@@ -17,8 +17,8 @@ var arr2 = [10, 40.450498, 'App', true, {name: 'development', code: 20}, ()=>con
 for (var i=0; i < arr2.length; i++)
 	console.log(`Element at index ${i} : `, arr2[i]);
 
-////////////////////////////////////////////////////////////////////////////////
-//JSON object
+/////////////////////////////  JSON object  ////////////////////////////////////
+
 const s4 = {
 	Name : 'I have no name',
 	Age : 21,
@@ -42,8 +42,8 @@ console.log(s4.Marks, typeof s4.Marks)
 console.log("Science marks", s4.Marks.Science);
 console.log("percentage", s4.Percentage[2])
 
-////////////////////////////////////////////////////////////////////////////////
-//function object
+////////////////////////////  function object  /////////////////////////////////
+
 //functions also occupy space in heap memory in js hence a function is also an object
 
 function greet(){ //greet is the reference variable //pointing to the function
@@ -63,3 +63,15 @@ function identifyDataTye(value) {
 console.log(identifyDataTye(null));
 console.log(identifyDataTye(arr1));
 console.log(identifyDataTye(70));
+
+/////////////////////////  ARRAY METHODS IN JS   //////////////////////////////
+// for (var i=0; i < arr1.length; i++) {
+// 	if (arr1[i] % 2 == 1)
+// 		console.log(arr1[i]);
+// }
+
+arr1.push(55); //Append element at the end of the array
+console.log(arr1);
+
+arr1.unshift(3); //Append element at the 0th index
+console.log(arr1);
