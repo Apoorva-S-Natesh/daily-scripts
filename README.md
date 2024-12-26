@@ -30,4 +30,3 @@ Feel free to contribute by:
 3. Suggesting improvements to the code or documentation.
 
 Happy Coding! 🚀
-![image](https://github.com/user-attachments/assets/6e1c72d0-a49e-4810-a139-afeff7ababfd)
