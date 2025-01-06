@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lexical Scope</title>
+</head>
+<body>
+	<script>
+		var globalVar = 200;
+		//console.log("value of inner is: ", inner); //Error: Uncaught ReferenceError: inner is not defined
+		//console.log("Value of Outer is: ", outerVar); //Error:  Uncaught ReferenceError: outer is not defined
+		console.log("Value of global is: ", globalVar); //200
+		function Outer() {
+			var outerVar = 300;
+			console.log("Value of Outer is: ", outerVar); // 300
+			console.log("Value of global is: ", globalVar); // 200
+			// console.log("value of inner is: ", innerVar); //Error :Uncaught ReferenceError: innerVar is not defined
+			function inner() {
+				var innerVar = 400;
+				console.log("value of inner is: ", innerVar); // 400
+				console.log("Value of Outer is: ", outerVar); // 300
+				console.log("Value of global is: ", globalVar);// 200
+			}
+			inner();
+		}
+		Outer();
+	</script>
+</body>
+</html>
+
+<!-- What is Lexical Scope?
+Lexical scope defines the accessibility of variables and functions depending on their location in the source code. Variables and functions have different levels of scope:
+
+Global Scope: Variables defined outside any function or block, accessible anywhere in the program.
+Local Scope: Variables defined inside a function or block, accessible only within that specific function or block.
+Nested Scope: Inner functions have access to variables in their parent functions.
+Block Scope: Variables defined with let and const are limited to the block they are declared in, like loops or conditionals.
+
+Each function creates its own environment(a branch). Variables and functions live on their respective branches. It something isn't found on the current branch, JS climbs up to the parent branch.
+Child scope will have access to its parent scope properties because in every scope we have one reference variable which will be pointing towards its parent scope.
+-->
