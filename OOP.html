@@ -1,0 +1,38 @@
+<script>
+	class Student {
+		constructor(s_name, s_age, s_email){
+			this.name = s_name;
+			this.age = s_age;
+			this.email = s_email;
+		}
+		eat(){
+			console.log(this.name, " is  eating");
+		}
+		playing() {
+			console.log(this.name, " is playing");
+		}
+	}
+
+	//Creation of object of Student class
+	s1 = new Student('Apoo', 28, 'apoo@iscool.com'); // the bracket is for calling the constructor method of Student class
+	console.log(s1.name, s1.age, s1.email); //accessing instance variables
+	s1.eat(); //Invoking instance method
+
+	s2 = new Student('Jello', 35, 'jelly@gel.com'); // new keyword is not there, Error: Uncaught TypeError: Class constructor Student cannot be invoked without 'new'
+	console.log(s2.name, s2.age, s2.email);
+	s2.playing();
+</script>
+
+<!--
+
+1. In global memory allocation, s1 will be allocated undefined.
+2. The errors in class will be checked and scanned but class is not stored in the memory.
+3. As soon as constructor is called an Object of the particular class in the memory. (Calling of constructor and Creation of object)
+In memory we have two parts, Stack segment and heap segment, in stack - object name or reference variables will be stored, in heap - objects will occupy
+4. When control comes inside the constructor, the stack frame of constructor is created.
+this keyword is holding the address of the object.
+5. Inside object name, age, email will be initialized with the values sent.
+6. control leaves the constructor and comes back to the statement where it was called and the return value is the momory address of object,
+the globl variable will now have the address of the object and the stack frame of constructor is deleted.
+
+-->
