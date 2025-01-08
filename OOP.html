@@ -1,11 +1,11 @@
 <script>
 	class Student {
-		constructor(s_name, s_age, s_email){
-			this.name = s_name;
-			this.age = s_age;
-			this.email = s_email;
+		constructor(s_name, s_age, s_email){ //s_name,s_age,s_email are parameters of condtructor used to initialize instance variables name, age, email
+			this.name = s_name;// instance variable declared inside the consrtuctor
+			this.age = s_age; // instance variable will be present in the object
+			this.email = s_email; // objects will be present in the heap segment of memory
 		}
-		eat(){
+		eat(){ // instance method, dont use function keyword
 			console.log(this.name, " is  eating");
 		}
 		playing() {
@@ -21,6 +21,7 @@
 	s2 = new Student('Jello', 35, 'jelly@gel.com'); // new keyword is not there, Error: Uncaught TypeError: Class constructor Student cannot be invoked without 'new'
 	console.log(s2.name, s2.age, s2.email);
 	s2.playing();
+
 </script>
 
 <!--
@@ -30,9 +31,43 @@
 3. As soon as constructor is called an Object of the particular class in the memory. (Calling of constructor and Creation of object)
 In memory we have two parts, Stack segment and heap segment, in stack - object name or reference variables will be stored, in heap - objects will occupy
 4. When control comes inside the constructor, the stack frame of constructor is created.
-this keyword is holding the address of the object.
+this keyword is holding the address of the current object.
 5. Inside object name, age, email will be initialized with the values sent.
 6. control leaves the constructor and comes back to the statement where it was called and the return value is the momory address of object,
 the globl variable will now have the address of the object and the stack frame of constructor is deleted.
 
 -->
+
+<!--                         I N H E R I T A N C E                           -->
+
+<script>
+	//Parent class
+	class Product {
+		constructor(name, price){
+			this.name = name;
+			this.price = price;
+		}
+		display() {
+			console.log(`${this.name} costs ${this.price}.`);
+		}
+	}
+
+	//Child class
+	class Book extends Product {
+		constructor(name, price, author) {
+			super(name, price); // Call the parent class's constructor
+			this.author = author;
+		}
+		display() {
+			super.display(); //Call the parent method
+			console.log(`${this.name} written by ${this.author}.`);
+		}
+	}
+	//create objects
+	const product = new Product("Laptop", 40000);
+	product.display(); // Output: Laptop costs 40000.
+
+	const book = new Book('Javascript Basics' , 25, 'John DOe');
+	book.display(); // Output: Javascript Basics costs 25.
+					// written by John DOe.
+</script>
