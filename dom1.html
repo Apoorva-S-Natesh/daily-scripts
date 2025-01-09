@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>document.getElementByID()</title>
+	<style>
+		.addBackground{
+			background-color: black; color: white;
+			height: 50px; width:100px;
+			padding: 10px; text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<p id="para">Hello</p>
+	<div>
+		<p><span>A magical </span>World</p>
+		<button onClick="changeClr()">Enter the world</button>
+	</div>
+
+
+	<script>
+		var toggle = true;
+		function changeClr() {
+			const target_ele =document.getElementById('para');
+			console.log(target_ele);
+			//alert(toggle)
+			if (toggle) {
+				// target_ele.style.color='White';
+				// target_ele.style.backgroundColor='black'; //Outdated way of manipulating instead use CSS class
+				target_ele.classList.add('addBackground');
+				toggle = false; // change state of toggle 
+				console.log(toggle);
+			}
+			else {
+				// target_ele.style.color='black';
+				// target_ele.style.backgroundColor='white'; //Outdated way of manipulating
+				target_ele.classList.remove('addBackground');
+				toggle = true;
+				console.log(toggle);
+			}
+		}
+	</script>
+</body>
+</html>
+
+<!--
+DOM 
+1.document.getElementByID() : 
+-->
