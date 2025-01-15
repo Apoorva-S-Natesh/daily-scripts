@@ -72,3 +72,5 @@ function createBankAccount(initialBalance) {
 const myAccount = createBankAccount(1000);
 myAccount.deposit(500); //Output: Deposited: 500, Balance: 1500
 myAccount.withdraw(300); //Output: withdrew: 300, Balance: 1200
+
+// cannot access balance from outside! the variable 'balance' acts as a private variable
