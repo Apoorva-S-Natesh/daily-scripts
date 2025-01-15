@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>callback and higer order function</title>
+</head>
+<body>
+	<script>
+		// function greet(name) {
+		// 	console.log('Hello ', name);
+		// }
+		// function processGreet(callback) {
+		// 	console.log('value of callback is ', callback()); // Hello  undefined
+		// 													  // value of callback is  undefined
+		// }
+		//processGreet(greet);
+		function processGreet(callback) {
+			callback('Apoo'); // Hello Apoo
+		}
+		processGreet((name)=>{console.log('Hello', name)});
+
+		//builtin higher order function
+		var array = [10, 11, 12, 13, 14, 15, 16];
+		var even = array.filter((ele)=> ele % 2 === 0); // arrow function is always better for callback function
+		console.log(even); // [10, 12, 14, 16]
+		var square = array.map(function(ele) {
+			return ele * ele
+		})
+		console.log(square); //[100, 121, 144, 169, 196, 225, 256]
+		var sqmodified = array.map(ele=>ele * ele - 10);
+		console.log(sqmodified);
+		
+		//shopping cart scenario
+		const cart = [100, 200, 300];
+
+		//Apply a discount of  10%
+		const discountedCart = cart.map(price => price * 0.9);
+		console.log(discountedCart); // Output: [90, 180, 270]
+
+		//filter items priced under 150
+		const affordableItems = discountedCart.filter(price => price < 150);
+		console.log(affordableItems); // output: 90
+
+		//calculate thetotal cost
+		const totalCost = discountedCart.reduce((total, price) => total + price, 0);
+		console.log(`total cost: $${totalCost}`); //Output: total cost: $540
+	</script>
+</body>
+</html>
+
+<!--
+higher order function: A funtion that can do both: takes another funtion as an argument, returns a function as its output
+callbakc function: A function passed as an argument to another function
+-->
