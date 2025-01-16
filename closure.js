@@ -74,3 +74,27 @@ myAccount.deposit(500); //Output: Deposited: 500, Balance: 1500
 myAccount.withdraw(300); //Output: withdrew: 300, Balance: 1200
 
 // cannot access balance from outside! the variable 'balance' acts as a private variable
+
+// RETURNING MULTIPLE FUNCTIONS
+function outerFunction2() {
+	let count = 0;
+	return {
+		increase() {
+		count++;
+		console.log(count);
+	},
+	decrease() {
+		count--;
+		console.log(count);
+	},
+	reset() {
+		count = 0;
+		console.log(count);
+	}
+}
+}
+counter = outerFunction2() // its alomost like creating an object of outerFuntcion1 and then calling the return functions through that object
+counter.increase(); // 1
+counter.increase(); // 2
+counter.decrease(); // 1
+counter. reset(); // 0
