@@ -42,7 +42,7 @@ function outerFunction1() {
 	}
 }
 }
-counter = outerFunction1()
+counter = outerFunction1() // its alomost like creating an object of outerFuntcion1 and then calling the return functions through that object
 counter.increase(); // 1
 counter.increase(); // 2
 counter.decrease(); // 1
