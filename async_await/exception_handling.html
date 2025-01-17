@@ -12,7 +12,7 @@ to avoid this abrupt termination we need to practice exception handling.
 <script>
 	/*
 	console.log("task1"); //task1
-	//consoe.log("task2")  // Uncaught ReferenceError: consoe is not defined
+	//consoe.log("task2")  // Uncaught ReferenceError: consoe is not defined, syntax error
     					//at exception_handling.html:14:2
 	console.log("task3"); // not executed
 	console.log("task4"); // not executed
@@ -33,13 +33,25 @@ to avoid this abrupt termination we need to practice exception handling.
 	
 	console.log('task1');
 	function sometask() {
-		console.log('task2' , z);
+		console.log('Some error in the code that should be caught' , z); //runtime error
 	}
 	try {
 		sometask()
 	} catch {
-		console.log('some error occoured in sometas function and handled');
+		console.log('some error occoured in sometask function and handled, error in try block and handled');
+	} finally {
+		console.log('finally block executes after try and catch block, regardless of error occurd or not, ofter used for cleanup operation');
 	}
 	console.log('task3');
 	console.log('task4');
+	//there has to be catch block for a try block, try block cannot exist without catch block
+	//This won't alter the flow of execution
+
+	//handling runtime error
+	try{
+		let result = 10/0; // dividing by 0
+		console.log(result);
+	} catch {
+		console.log("an erro occured: ", error.message);
+	}
 </script>
