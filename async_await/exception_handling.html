@@ -2,7 +2,7 @@
 Types of error in Javascript
 Syntax error (during complie time) - No code will be executed
 Runtime error - tasks after the exception error will not be executed
-Logical error
+Logical error - runtime error
 
 We should always avoid sudden temination of code, exception handling will avoid sudden temination of code.
 Where ever exception occured, control goes back to JS Engine and further instructions are avoided and not exectued,
@@ -10,9 +10,36 @@ to avoid this abrupt termination we need to practice exception handling.
 
 -->
 <script>
+	/*
 	console.log("task1"); //task1
-	consoe.log("task2")  // Uncaught ReferenceError: consoe is not defined
+	//consoe.log("task2")  // Uncaught ReferenceError: consoe is not defined
     					//at exception_handling.html:14:2
 	console.log("task3"); // not executed
 	console.log("task4"); // not executed
+
+	console.log("1");
+	function sometask() {
+		console.log("2", a); // a id undefined and hence referece error, control goes back to the JS engine from here and further code isnt executed.
+	}
+	sometask();
+	console.log("3");
+	console.log("4");
+
+	//this is why eception handling is required. 
+	*/
+
+	//we felt that do error might occur in sometsdk function and dont want execution to stop there. 
+	// So add a try block for calling that function and when some eroor is caught in the try block we mention how it should be handled in catch block
+	
+	console.log('task1');
+	function sometask() {
+		console.log('task2' , z);
+	}
+	try {
+		sometask()
+	} catch {
+		console.log('some error occoured in sometas function and handled');
+	}
+	console.log('task3');
+	console.log('task4');
 </script>
