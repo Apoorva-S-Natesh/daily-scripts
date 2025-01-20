@@ -21,3 +21,8 @@ myPromise.then(function(result) {
 .catch(function(error) {
 	console.log(error); // Handles any error in the chain
 });
+
+
+// If a .then() method returns a value then the value is automatically wrapped in a promise
+
+//if there is no .catch() then an error will be thrown
