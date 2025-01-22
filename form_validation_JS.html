@@ -4,18 +4,46 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Form Validation</title>
+	<style>
+		#msg{
+			color: red;
+		}
+	</style>
 </head>
 <body>
-	<form onsubmit="validate()">
-		<label>FIrst Name</label>
-		<input type="text" id="input_ele" required>
-		<button>Submit</button>
+	<form onsubmit="return validate(event)">
+		<label>First Name</label>
+		<input type="text" id="input_ele">
+		<span id="msg">*</span>
+		<br><br>
+		<!--<button>Submit</button> valiadte would work here-->
+		<label for="Password">Password</label>
+		<input type="password" id="password" name="password">
+		<button type="button" onclick="validatePassword()">Submit</button>
 	</form>
 
 	<script>
 		function validate() {
+			event.preventDefault();
 			var name = document.getElementById('input_ele').value
-			alert(name);
+			if (name ==+ '') {
+				target = document.getElementById('msg')
+				target.textContent = 'First name should not be empty'
+			} else if(name.length < 2) {
+				target = document.getElementById('msg')
+				target.textContent = 'Minimum length is 2'	
+			} 
+		}
+		function validatePassword() {
+			event.preventDefault();
+			password = document.getElementById('password').value;
+			const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+			//console.log(passwordPattern.test(password)); // returns true or false, checking password againest provided pattern using test
+			if(!passwordPattern.test(password)) {
+				alert('Enter valid Password');
+				return false;
+			}
+			alert("Password is valid");
 		}
 	</script>
 </body>
