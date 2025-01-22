@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Validating mutliple fields</title>
+	<style>
+		#multiFieldForm{
+			padding:5px;
+			display: flex;
+			flex-direction: column;
+			width: 50%;
+			justify-content: center;
+			align-items: center;
+			background-color:rgb(224, 151, 42);
+			color:rgb(24, 24, 72);
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+	<form id="multiFieldForm"><!--can even use onsubmit too here instead of onclick at button-->
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+		<br>
+		<label for="age">Age</label>
+		<input type="number" id="age" name="age">
+		<br>
+		<button onclick="return validateAll(event)">Submit</button> <!--send the event and return to used the event to prevent default refreshing on submit-->
+	</form>
+
+	<script>
+		function validateAll() {
+			event.preventDefault();
+			form = document.getElementById('multiFieldForm');
+			name = form.name.value;
+			age = form.age.value;
+			console.log(name, age);
+
+			if(name === '' || age === '') {
+				alert('All fields are required...!!')
+			}
+			if(isNaN(age) || age < 0) {
+				alert('Age must be a positive number')
+			}
+		}
+	</script>
+</body>
+</html>
