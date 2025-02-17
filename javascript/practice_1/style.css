@@ -1,0 +1,26 @@
+body {
+	font-family: monospace;
+	background-color: #1f1c17;
+	color: #e6e2db;
+}
+
+header h1{
+	text-align: center;
+	color: #fce563;
+	font-weight: 1.25rem;
+	width: 90%;
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #ccc;
+}
+
+ul {
+	list-style: none;
+	text-align: center;
+  }
+  
+  li {
+	margin: 0.5rem 0;
+	color: #e9e2ba;
+  }
