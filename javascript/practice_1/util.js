@@ -1,0 +1,1 @@
+export let apiKey = "lfkjsl2341"; //To make it available for other js files
