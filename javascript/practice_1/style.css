@@ -24,3 +24,20 @@ ul {
 	margin: 0.5rem 0;
 	color: #e9e2ba;
   }
+
+  #functionsItem {
+	position: relative;  /* This makes the child absolute position relative to this element */
+  }
+
+  #functionsContent {
+	display: none;
+	background-color: #333;
+	color: #e9e2ba;
+	border: 1px solid #fce563;
+	padding: 1rem;
+	position:absolute; /* Position relative to its nearest positioned ancestor */
+	width: 300px;
+	z-index: 100;
+	left: 0; /*Align to the left of the parent element */
+	top: 100%; /* Below the li element */
+  }

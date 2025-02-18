@@ -13,7 +13,18 @@
 	<ul>
 	  <li>Base Syntax & Rules</li>
       <li>Variables, Values & Operators</li>
-      <li>Functions</li>
+      <li id="functionsItem">Functions
+		<div id="functionsContent" style="display: none;">
+			<p>Arrow Functions:</p>
+			<ul>
+				<li>If exactly one parameter, then no need of wrapping paranthesis: <code>username => { ... }</code></li>
+				<li>If no pararmeters or more than one, then you cannot omit the paranthesis: <code>() => { ... }</code> or 
+				<code>(userName, message) => { ... }</code></li>
+				<li>Omitting function body curly braces if there is no other logic other than a return statement inside the function: <code>number => number * 3;</code></li>
+        		<li>If using the above shorter alternative and want to return a JavaScript object then need to wrap the object in an extra pair of parentheses: <code>number => ({ age: number });</code></li>
+			</ul>
+		</div>
+	  </li>
       <li>Objects</li>
       <li>Arrays</li>
       <li>Control Structures</li>
@@ -22,7 +33,8 @@
       <li>Tricky Parts</li>
 	</ul>
 
-	<script src="./app.js" rel="script" defer type="module"></script> <!--defer is added to mention to execute the 
+	<script src="./app.js" defer></script>
+	<!--defer is added to mention to execute the 
 	imported script after the loading and parsing of the html elements, not required if script is at the end of the body-->
 </body>
 </html>
