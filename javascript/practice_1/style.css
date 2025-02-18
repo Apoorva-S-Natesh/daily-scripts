@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
 body {
 	font-family: monospace;
 	background-color: #1f1c17;
@@ -31,13 +37,15 @@ ul {
 
   #functionsContent {
 	display: none;
+	position:absolute; /* Position relative to its nearest positioned ancestor */
+	left:50%; /* Start from the middle of the parent */
+	transform: translateX(-50%); /* Shift it back to the left by half of its own width to center it */
+	width: 50%;
 	background-color: #333;
 	color: #e9e2ba;
 	border: 1px solid #fce563;
-	padding: 1rem;
-	position:absolute; /* Position relative to its nearest positioned ancestor */
-	width: 300px;
-	z-index: 100;
-	left: 0; /*Align to the left of the parent element */
+	box-shadow: 0 4px 8px rgba(253, 248, 97, 0.745);
+	padding: 2rem;
+	z-index: 1000;
 	top: 100%; /* Below the li element */
   }

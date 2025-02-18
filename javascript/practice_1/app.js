@@ -35,14 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     functionsItem.addEventListener('mouseenter', function() {
         functionsContent.style.display = 'block';
-        functionsContent.style.opacity = '1'; // Make sure it's fully visible
     });
 
     functionsItem.addEventListener('mouseleave', function() {
-        functionsContent.style.opacity = '0';
         setTimeout(() => {
             functionsContent.style.display = 'none'; // Delay hiding to see transition
-        }, 300); // Delay in ms, adjust as necessary
+        }, 300); // Delay in ms
     });
 });
 
