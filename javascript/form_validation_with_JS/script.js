@@ -8,5 +8,15 @@ let isError = false;
 
 function cleanInputString(str) {
   const regex = /[+-\s]/g; // g - global : to look for a match even after it has found a match
-
+  return str.replace(regex, '');
 }
+
+function isInvalidInput(str) {
+	const regex = /\d+e\d+/i;
+	return str.match(regex);
+  }
+   
+  function addEntry() {
+	const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+  
+  }
